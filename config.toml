@@ -2,8 +2,8 @@ theme = "amberwood"
 
 [editor]
 line-number = "relative"
-bufferline = "always"
-shell = ["bash", "-c"]
+bufferline = "always" # like a tabbar, but clicking doesn't work, switch buffers using gn and gp
+shell = ["bash", "-c"] # sh -c by default, messes with SIGUSR1 and some other stuff
 
 [editor.cursor-shape]
 insert = "bar"
@@ -27,7 +27,7 @@ character = "▏"
 
 ## NORMAL MODE - KEYMAPS ###########
 [keys.normal]
-D = "goto_line_end"
+D = "goto_line_end" # shift+d, works similar to $
 s = ["goto_word"] # similar to leap.nvim
 C-d = "kill_to_line_end"
 
@@ -35,13 +35,12 @@ C-d = "kill_to_line_end"
 C-s = [":w", ":run-shell-command if [ $(pgrep flutter) ]; then kill -SIGUSR1 $(pgrep flutter); fi"]
 
 [keys.normal.g]
-c = "toggle_comments"
+c = "toggle_comments" # toggle comments on a single line with gc
 
 ## SELECT MODE - KEYMAPS ###########
 [keys.select]
 C-c = ["goto_line_end", "yank_main_selection_to_clipboard"]
 U = ["goto_line_end", "switch_case"]
 
-## toggle comments with gc
 [keys.select.g]
-c = "toggle_comments"
+c = "toggle_comments" # toggle comments on selections with gc
