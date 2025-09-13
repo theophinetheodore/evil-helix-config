@@ -1,0 +1,47 @@
+theme = "amberwood"
+
+[editor]
+line-number = "relative"
+bufferline = "always"
+shell = ["bash", "-c"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+## replaced file-name with file-absolute-path
+left = ["mode", "spinner", "file-absolute-path", "read-only-indicator", "file-modification-indicator"]
+## added total-line-numbers
+right = ["diagnostics", "selections", "register", "position", "file-encoding", "total-line-numbers"]
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+## KEYMAPS #########################
+
+## NORMAL MODE - KEYMAPS ###########
+[keys.normal]
+D = "goto_line_end"
+s = ["goto_word"] # similar to leap.nvim
+C-d = "kill_to_line_end"
+
+# hot reloads flutter application after save
+C-s = [":w", ":run-shell-command if [ $(pgrep flutter) ]; then kill -SIGUSR1 $(pgrep flutter); fi"]
+
+[keys.normal.g]
+c = "toggle_comments"
+
+## SELECT MODE - KEYMAPS ###########
+[keys.select]
+C-c = ["goto_line_end", "yank_main_selection_to_clipboard"]
+U = ["goto_line_end", "switch_case"]
+
+## toggle comments with gc
+[keys.select.g]
+c = "toggle_comments"
