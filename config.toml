@@ -40,7 +40,6 @@ c = "toggle_comments" # toggle comments on a single line with gc
 ## SELECT MODE - KEYMAPS ###########
 [keys.select]
 C-c = ["goto_line_end", "yank_main_selection_to_clipboard"]
-U = ["goto_line_end", "switch_case"]
 
 [keys.select.g]
 c = "toggle_comments" # toggle comments on selections with gc
