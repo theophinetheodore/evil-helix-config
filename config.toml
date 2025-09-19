@@ -27,9 +27,9 @@ character = "▏"
 
 ## NORMAL MODE - KEYMAPS ###########
 [keys.normal]
-D = "goto_line_end" # shift+d, works similar to $
+C-d = "goto_line_end" # works similar to $
 s = ["goto_word"] # similar to leap.nvim
-C-d = "kill_to_line_end"
+D = "kill_to_line_end"
 
 # hot reloads flutter application after save
 C-s = [":w", ":run-shell-command if [ $(pgrep flutter) ]; then kill -SIGUSR1 $(pgrep flutter); fi"]
